@@ -9,11 +9,11 @@ function addPreviousRedirect(re) {
     newRe.classList.add("redirect");
     newRe.innerHTML = `
         <p class="original">${re.original}</p>
-        <p class="shortened">http://localhost:5000/go/${re.code}</p>
+        <p class="shortened">${API_URL}/go/${re.code}</p>
         <p class="copy">Copy redirect <i class="far fa-copy"></i></p>
     `
     newRe.querySelector(".copy").addEventListener("click", event => {
-        navigator.clipboard.writeText(`http://localhost:5000/go/${re.code}`).then(()=> {
+        navigator.clipboard.writeText(`${API_URL}/go/${re.code}`).then(()=> {
             newRe.querySelector(".copy").innerHTML = "Copied redirect"
             setTimeout(() => {
                 newRe.querySelector(".copy").innerHTML = `Copy redirect <i class="far fa-copy"></i>`
@@ -84,7 +84,7 @@ form.addEventListener("submit", (event) => {
                 if (data.error) {
                     submitBut.innerHTML = data.error;
                 } else {
-                    document.querySelector("#final-link").innerHTML = "http://localhost:5000/go/" + data.code;
+                    document.querySelector("#final-link").innerHTML = API_URL + "/go/" + data.code;
                     document.querySelector(".link-ready").classList.remove("hidden");
                     addPreviousRedirect(data);
                 }
