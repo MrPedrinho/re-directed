@@ -85,65 +85,76 @@ app.get("/public/app.js", (req,res) => {
     res.sendFile(__dirname + "/public/app.js")
 })
 
+var pattern = new RegExp('^(https?:\\/\\/)?'+
+'((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|'+
+'((\\d{1,3}\\.){3}\\d{1,3}))'+
+'(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+
+'(\\?[;&a-z\\d%_.~+=-]*)?'+
+'(\\#[-a-z\\d_]*)?$','i')
+
 app.post("/shorten", (req,res) => {
-    if (req.body.customCode.trim().length > 0) {
-        URL.findOne({code: req.body.customCode}, async (err,data) => {
-            if (!err) {
-                if (data) {
-                    res.json({error: "Code exists"});
-                } else {
-                    var newCode = req.body.customCode.trim()
-                    var newRedirect = new URL({
-                        original: req.body.sendingURL,
-                        code: newCode
-                    })
-                    newRedirect.save((err,data) => {
-                        if (!err) {
-                            User.findOneAndUpdate({
-                               token: req.body.token 
-                            }, {
-                                $push: {redirects: {
-                                    original: req.body.sendingURL,
-                                    code: newCode
-                                }}
-                            }, {useFindAndModify: false, returnOriginal:false},
-                            (err,doc) => {
-                                if (!err) {
-                                    res.json({
-                                        original: data.original,
-                                        code: data.code
-                                    })
-                                }
-                            });
-                        }
-                    })
-                }
-            }
-        })     
-    } else {
-        getCode()
-        var newRedirect = new URL({
-            original: req.body.sendingURL,
-            code: currentCode
-        })
-        newRedirect.save((err,data) => {
-            User.findOneAndUpdate({
-                token: req.body.token
-            }, {
-                $push: {redirects: {
-                    original: req.body.sendingURL,
-                    code: currentCode
-                }}
-            }, {useFindAndModify: false, returnOriginal:false},
-            (err,doc) => {
+    if (pattern.test(req.body.sendingURL)) {
+        if (req.body.customCode.trim().length > 0) {
+            URL.findOne({code: req.body.customCode}, async (err,data) => {
                 if (!err) {
-                    res.json({
-                        original: data.original,
-                        code: data.code
-                    })
+                    if (data) {
+                        res.json({error: "Code exists"});
+                    } else {
+                        var newCode = req.body.customCode.trim()
+                        var newRedirect = new URL({
+                            original: req.body.sendingURL,
+                            code: newCode
+                        })
+                        newRedirect.save((err,data) => {
+                            if (!err) {
+                                User.findOneAndUpdate({
+                                token: req.body.token 
+                                }, {
+                                    $push: {redirects: {
+                                        original: req.body.sendingURL,
+                                        code: newCode
+                                    }}
+                                }, {useFindAndModify: false, returnOriginal:false},
+                                (err,doc) => {
+                                    if (!err) {
+                                        res.json({
+                                            original: data.original,
+                                            code: data.code
+                                        })
+                                    }
+                                });
+                            }
+                        })
+                    }
                 }
-            });
-        })
+            })     
+        } else {
+            getCode()
+            var newRedirect = new URL({
+                original: req.body.sendingURL,
+                code: currentCode
+            })
+            newRedirect.save((err,data) => {
+                User.findOneAndUpdate({
+                    token: req.body.token
+                }, {
+                    $push: {redirects: {
+                        original: req.body.sendingURL,
+                        code: currentCode
+                    }}
+                }, {useFindAndModify: false, returnOriginal:false},
+                (err,doc) => {
+                    if (!err) {
+                        res.json({
+                            original: data.original,
+                            code: data.code
+                        })
+                    }
+                });
+            })
+        }
+    } else {
+        res.json({error: "Invalid URL"})
     }
 })
 
