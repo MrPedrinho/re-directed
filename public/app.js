@@ -1,5 +1,5 @@
 const form = document.querySelector("#inputForm");
-const API_URL = "http://localhost:5000"
+const API_URL = "https://re-directed.herokuapp.com/"
 const redirectStorage = window.localStorage;
 
 function addPreviousRedirect(re) {
