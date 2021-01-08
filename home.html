@@ -1,0 +1,68 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RE.DIRECT | Home</title>
+    <link rel="stylesheet" href="/public/style.css">
+    <script src="/public/app.js" defer></script>
+    <script src="https://kit.fontawesome.com/fa15493d14.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <h2 class="title">RE.DIRECT</h2 >
+            <div class="accountStuff">
+                <a href="#my-redirects" class="my-urls"><p>My redirects</p></a>
+            </div>
+            <a href="#shortify" class="create">
+                <p>SHORTEN</p>
+            </a>
+        </nav>
+        <div class="intro">
+            <div class="text-portion">
+                <h2 class="slogan">Tiny link, massive shareability</h2>
+                <div class="lists">
+                    <p class="info">Turn big links into small stuff</p>
+                    <p class="reasons">The most <b>useless</b>, most <b>basic</b>, and with <b>most downtime</b> URL shortener</p>
+                    <a href="#shortify" class="create">
+                        <p>Start shortening</p>
+                    </a>
+                </div>
+            </div>
+            <img src="illustration.svg" fill="#ffffff"></svg>
+        </div>
+        <div class="shortify" id="shortify">
+            <div class="middle">
+                <h1>Create a redirect</h1>
+                <p class="notice">A simple click</p>
+                <form id="inputForm">
+                    <div class="upper">
+                        <input type="text" placeholder="https://example.com" id="paste-link" name="inputUrl" required>
+                    </div>
+                    <div class="lower">
+                        <input type="text" placeholder="(Optional) Custom code" id="custom-code" name="custom">
+                        <p id="availability">Check availability</p>
+                        <button id="submit">Make it tiny</button>
+                    </div>      
+                </form>
+                <div class="link-ready hidden">
+                    <p class="info">Your redirect is ready</p>
+                    <div class="bottom">
+                        <p class="copy" id="copy">Copy redirect <i class="far fa-copy"></i></p>
+                        <p class="link" id="final-link">https://example.com/12313123</p>                   
+                    </div>         
+                </div>
+                <div class="previousLinks hidden" id="my-redirects">
+                    <h1>Here are your previous redirects</h1>
+                    <div class="redirects">
+                        <div class="identifier">
+                            <p class="original">Original URL</p>
+                            <p class="created">Created Redirect</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

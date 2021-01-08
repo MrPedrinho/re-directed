@@ -1,0 +1,468 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans&display=swap");
+
+:root {
+  font-size: 16px;
+  --whitish: #ffffff;
+  --text-lil-black: #333333;
+  --text-black: #242323;
+  --main-color: #3866d9;
+  --main-color-hover: #5078df;
+  --black-text-hover: #595959;
+  --alt-color: #204197;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  margin: 0 10%;
+  width: 80%;
+  height: 100%;
+}
+
+/* Nav bar */
+
+nav {
+  font-family: "Roboto", sans-serif;
+  height: 7%;
+  max-height: 55px;
+  padding: 1% 10%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: var(--whitish);
+  color: var(--text-black);
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 80%;
+}
+
+nav .hidden {
+  display: none;
+}
+
+nav .accountStuff {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 15%;
+  font-size: 1.1rem;
+  color: var(--text-lil-black);
+}
+
+nav .accountStuff .my-urls {
+  color: var(--text-lil-black);
+  text-decoration: none;
+}
+
+nav .accountStuff .my-urls:hover {
+  cursor: pointer;
+  color: var(--black-text-hover);
+}
+
+nav .title {
+  width: 20%;
+  margin-right: auto;
+  font-size: 2.5rem;
+  font-weight: 900;
+  font-family: "Noto Sans JP", sans-serif;
+  text-decoration: none;
+  color: var(--text-black);
+}
+
+nav .create {
+  background-color: var(--main-color);
+  color: var(--whitish);
+  padding: 1% 7%;
+  border-radius: 1rem;
+  margin-left: 5%;
+  font-size: 1.3rem;
+  text-decoration: none;
+}
+
+nav .create:hover {
+  cursor: pointer;
+  filter: brightness(1.1);
+}
+
+/* Intro */
+
+.intro {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  font-family: "Roboto", sans-serif;
+  padding-top: 8%;
+  color: var(--text-black);
+}
+
+.intro .text-portion {
+  margin-top: 0px;
+  width: 50%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.intro .text-portion .slogan {
+  font-size: 2.5rem;
+  padding: 5% 0;
+}
+
+.intro .text-portion .lists * {
+  font-size: 1.2rem;
+}
+
+.intro .lists .info {
+  padding-bottom: 2%;
+}
+
+.intro .lists .create {
+  margin-top: 7%;
+  background-color: var(--main-color);
+  width: 50%;
+  text-align: center;
+  padding: 2%;
+  display: block;
+  border-radius: 0.7rem;
+  color: var(--whitish);
+  text-decoration: none;
+}
+
+.intro .lists .create:hover {
+  cursor: pointer;
+  filter: brightness(1.1);
+}
+
+.intro img {
+  width: 50%;
+}
+
+/* Shortify */
+
+.shortify {
+  background-color: var(--alt-color);
+  width: 100vw;
+  margin-top: 5%;
+  margin-left: -12.5%;
+  display: flex;
+  align-items: center;
+  padding: 7% 0;
+  justify-content: center;
+  min-height: 200px;
+  color: var(--whitish);
+  margin-bottom: 10%;
+}
+
+.shortify .hidden {
+  display: none !important;
+}
+
+.shortify .middle {
+  font-family: "Roboto", sans-serif;
+  min-width: 60%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.shortify .middle h1 {
+  margin-right: auto;
+  margin-bottom: 5%;
+  font-size: 2.5rem;
+}
+
+.shortify .middle .notice {
+  margin-right: auto;
+  font-size: 1.1rem;
+  padding-bottom: 1%;
+}
+
+.shortify form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.shortify form input {
+  height: 5vh;
+  padding: 1% 3%;
+  margin-right: auto;
+  border-radius: 0.4rem;
+  border: none;
+  font-size: 1rem;
+}
+
+.shortify .lower {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.shortify #paste-link {
+  width: 69%;
+  margin-bottom: 2%;
+}
+
+.shortify #custom-code {
+  width: 40%;
+}
+
+.shortify form #submit {
+  width: 30%;
+  height: 5vh;
+  padding: 1% 5%;
+  margin-left: auto;
+  border: none;
+  background-color: var(--main-color);
+  color: var(--whitish);
+  border-radius: 0.4rem;
+  font-size: 1.2rem;
+}
+
+.shortify form #availability {
+  background-color: var(--main-color);
+  color: var(--whitish);
+  padding: 0 0;
+  border-radius: 0.4rem;
+  height: 5vh;
+  width: 20%;
+  text-align: center;
+  line-height: 5vh;
+}
+
+.shortify form #availability:hover {
+  cursor: pointer;
+  filter: brightness(1.1);
+}
+
+.shortify form button:hover {
+  cursor: pointer;
+  filter: brightness(1.1);
+}
+
+.shortify .link-ready {
+  padding-top: 2%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 75px;
+}
+
+.shortify .link-ready .info {
+  font-weight: 500;
+  font-size: 1.5rem;
+  padding-bottom: 2%;
+}
+
+.shortify .link-ready .bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.shortify .link-ready .bottom .link {
+  font-family: "PT Sans", sans-serif;
+  padding-left: 5%;
+}
+
+.shortify .link-ready .bottom .copy {
+  background-color: var(--main-color);
+  color: var(--whitish);
+  padding: 1% 5%;
+  border-radius: 0.4rem;
+}
+
+.shortify .link-ready .bottom .copy:hover {
+  cursor: pointer;
+  filter: brightness(1.1);
+}
+
+/* Redirects */
+
+.previousLinks {
+  padding-top: calc(7% + 30px);
+  width: 100%;
+}
+
+.previousLinks h1 {
+  margin-left: auto;
+}
+
+.previousLinks .redirects {
+  width: 100%;
+  margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+}
+
+.previousLinks .redirects .identifier {
+  width: 100%;
+  display: flex;
+  padding-bottom: 10px;
+}
+
+.previousLinks .redirects .identifier .original {
+  margin-right: auto;
+}
+.previousLinks .redirects .identifier .created {
+  margin-left: auto;
+}
+
+.previousLinks .redirects:last-child) {
+  margin-bottom: 0;
+}
+
+.previousLinks .redirects .redirect {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: var(--whitish);
+  color: var(--text-black);
+  padding: 10px;
+  border-radius: 1rem;
+  margin-bottom: 5px;
+}
+
+.previousLinks .redirects .redirect .copy {
+  background-color: var(--main-color);
+  color: var(--whitish);
+  padding: 1% 5%;
+  border-radius: 0.4rem;
+  margin-left: 2%;
+  height: minmax(80%, 50px);
+}
+
+.previousLinks .redirects .redirect .copy:hover {
+  cursor: pointer;
+  filter: brightness(1.1);
+}
+
+.previousLinks .redirects .redirect .original {
+  margin-right: auto;
+  max-width: 30%;
+}
+
+.previousLinks .redirects .redirect .shortened {
+  max-width: 40%;
+  text-align: end;
+}
+
+/* 404 */
+
+.container2 {
+  width: 80%;
+  margin-left: 10%;
+}
+
+.notFound {
+  display: flex;
+  padding-top: 15%;
+  justify-content: center;
+  align-items: center;
+}
+
+.oops {
+  width: 40%;
+  font-family: "Roboto", sans-serif;
+}
+
+.oops h1 {
+  font-size: 5rem;
+  color: var(--text-black);
+}
+
+.oops h2 {
+  font-size: 2rem;
+  color: var(--text-black);
+  padding-bottom: 5%;
+}
+
+.oops h3 {
+  color: var(--text-black);
+}
+
+.oops a {
+  text-decoration: none;
+  color: var(--main-color);
+}
+
+.notFound svg {
+  height: 50vh;
+}
+
+/* Media Queries*/
+
+@media screen and (max-width: 1382px) {
+  :root {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  :root {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  :root {
+    font-size: 13;
+  }
+
+  .notFound {
+    padding-top: 30%;
+  }
+
+  .intro {
+    padding-top: 10%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  :root {
+    font-size: 12px;
+  }
+
+  .notFound {
+    flex-direction: column;
+  }
+
+  .oops {
+    width: 100%;
+  }
+
+  nav .accountStuff {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  :root {
+    font-size: 10px;
+  }
+
+  .intro {
+    padding-top: 15%;
+  }
+}
