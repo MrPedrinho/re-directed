@@ -245,7 +245,9 @@ nav .create:hover {
   height: 5vh;
   width: 20%;
   text-align: center;
-  line-height: 5vh;
+  display: flex;
+  align-self: center;
+  justify-content: center;
 }
 
 .shortify form #availability:hover {
