@@ -166,7 +166,7 @@ nav .create:hover {
   justify-content: center;
   min-height: 200px;
   color: var(--whitish);
-  margin-bottom: 10%;
+  margin-bottom: 5%;
 }
 
 .shortify .hidden {
@@ -473,4 +473,5 @@ nav .create:hover {
   font-family: "Roboto", sans-serif;
   width: 100%;
   text-align: center;
+  padding-bottom: 50px;
 }
