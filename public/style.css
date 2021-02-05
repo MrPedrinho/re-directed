@@ -468,3 +468,9 @@ nav .create:hover {
     padding-top: 15%;
   }
 }
+
+.ownership {
+  font-family: "Roboto", sans-serif;
+  width: 100%;
+  text-align: center;
+}
