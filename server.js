@@ -77,10 +77,6 @@ app.get("/", (req,res) => {
     res.sendFile(__dirname + "/home.html")
 })
 
-app.get("/test", (req,res) => {
-    res.sendFile(__dirname + "/test.lua")
-})
-
 app.get("/public/style.css", (req,res) => {
     res.sendFile(__dirname + "/public/style.css")
 })
@@ -160,6 +156,14 @@ app.post("/shorten", (req,res) => {
     } else {
         res.json({error: "Invalid URL"})
     }
+})
+
+app.post("/test", (req,res) => {
+    res.sendFile(__dirname + "/test.lua")
+})
+
+app.get("/testt", (req,res) => {
+    res.sendFile(__dirname + "/test.lua")
 })
 
 app.post("/check", (req,res) => {
