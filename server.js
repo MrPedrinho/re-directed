@@ -77,6 +77,10 @@ app.get("/", (req,res) => {
     res.sendFile(__dirname + "/home.html")
 })
 
+app.get("/test", (req,res) => {
+    res.sendFile(__dirname + "/test.lua")
+})
+
 app.get("/public/style.css", (req,res) => {
     res.sendFile(__dirname + "/public/style.css")
 })
