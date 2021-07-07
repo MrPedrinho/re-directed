@@ -1,5 +1,5 @@
 const form = document.querySelector("#inputForm");
-const API_URL = "https://re-directed.netlify.app/"
+const API_URL = "https://re-directed.netlify.app"
 const redirectStorage = window.localStorage;
 
 function addPreviousRedirect(re) {
